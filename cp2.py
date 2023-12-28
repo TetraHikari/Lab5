@@ -31,6 +31,8 @@ if __name__ == "__main__":
     print(t.calculate_fare())
     w = Walk(10, 20)
     print(w.calculate_fare())
+    tax = Taxi(10, 20, 10)
+    print(tax.calculate_fare())
 
 
     
