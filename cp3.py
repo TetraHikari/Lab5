@@ -131,9 +131,6 @@ if __name__ == "__main__":
     pole1.showpole()
     pole1.pushdisk(disk1)
     pole1.popdisk()
-    disk1.showdisk()
-    disk1.newpos(50, 50)
-    disk1.cleardisk()
 
     h = Hanoi()
     h.solve()
