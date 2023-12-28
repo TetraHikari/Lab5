@@ -15,11 +15,16 @@ class Disk(object):
         turtle.fillcolor("blue")  
         turtle.begin_fill()
         
-        for _ in range(2):
-            turtle.forward(self.dwidth)
-            turtle.left(90)
-            turtle.forward(self.dheight)
-            turtle.left(90)
+        
+        turtle.forward(self.dwidth/2)
+        turtle.left(90)
+        turtle.forward(self.dheight)
+        turtle.left(90)
+        turtle.forward(self.dwidth)
+        turtle.left(90)
+        turtle.forward(self.dheight)
+        turtle.left(90)
+        turtle.forward(self.dwidth/2)
         
         turtle.end_fill()
     
@@ -36,11 +41,16 @@ class Disk(object):
         turtle.begin_fill()
         turtle.color("white")
         
-        for _ in range(2):
-            turtle.forward(self.dwidth)
-            turtle.left(90)
-            turtle.forward(self.dheight)
-            turtle.left(90)
+         
+        turtle.forward(self.dwidth/2)
+        turtle.left(90)
+        turtle.forward(self.dheight)
+        turtle.left(90)
+        turtle.forward(self.dwidth)
+        turtle.left(90)
+        turtle.forward(self.dheight)
+        turtle.left(90)
+        turtle.forward(self.dwidth/2)
         
         turtle.end_fill() 
         turtle.color("black")  
@@ -120,6 +130,8 @@ if __name__ == "__main__":
     disk1.showdisk()
     disk1.newpos(50, 50)
     disk1.cleardisk()
+
+    
     turtle.done()  
 
 
