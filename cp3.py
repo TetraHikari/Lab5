@@ -44,6 +44,36 @@ class Disk(object):
         
         turtle.end_fill()
 
+class Pole():
+    def __init__(self, name="", xpos=0, ypos=0, thick=10, length=100):
+        self.pname = name
+        self.toppos = 0
+        self.stack = []
+        self.pxpos = xpos
+        self.pypos = ypos
+        self.pthick = thick
+        self.plength = length
+    
+    def showpole(self):
+        turtle.penup()
+        turtle.goto(self.pxpos, self.pypos)
+        turtle.pendown()
+        turtle.fillcolor("grey") 
+        turtle.begin_fill()
+        
+        for _ in range(2):
+            turtle.forward(self.pthick)
+            turtle.left(90)
+            turtle.forward(self.plength)
+            turtle.left(90)
+        
+        turtle.end_fill()
+
+    def pushdisk(self, disk):
+        disk.newpos(self.pxpos, self.toppos)
+        self.stack.append(disk)
+        self.toppos += disk.dheight
+    
 
 if __name__ == "__main__":
     turtle.speed(1)  
