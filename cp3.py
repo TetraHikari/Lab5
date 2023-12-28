@@ -76,11 +76,13 @@ class Pole():
         disk.newpos(self.pxpos, self.toppos)
         self.toppos += disk.dheight
         self.stack.append(disk)
-
+        disk.showdisk()
+        
     def popdisk(self):
         disk = self.stack.pop()
         disk.newpos(self.pxpos, self.toppos)
         self.toppos -= disk.dheight
+        disk.cleardisk()
         return disk
 
 
