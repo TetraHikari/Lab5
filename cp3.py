@@ -8,6 +8,7 @@ class Disk(object):
         self.dypos = ypos
         self.dheight = height
         self.dwidth = width
+        self.loop = 1
     
     def showdisk(self):
         self.t.penup()
@@ -27,6 +28,7 @@ class Disk(object):
         self.t.left(90)
         self.t.forward(self.dwidth/2)
         
+        
         self.t.end_fill()
     
     def newpos(self, xpos, ypos):
@@ -38,24 +40,14 @@ class Disk(object):
         self.t.penup()
         self.t.goto(self.dxpos, self.dypos)
         self.t.pendown()
-        self.t.fillcolor("white") 
-        self.t.begin_fill()
-        self.t.color("white")
         
-         
-        self.t.forward(self.dwidth/2)
-        self.t.left(90)
-        self.t.forward(self.dheight)
-        self.t.left(90)
-        self.t.forward(self.dwidth)
-        self.t.left(90)
-        self.t.forward(self.dheight)
-        self.t.left(90)
-        self.t.forward(self.dwidth/2)
-        
-        self.t.end_fill() 
-        self.t.color("black")  
-        self.t.end_fill()
+        self.t.clear()  # Clear only the area covered by the blue pen
+
+        # Reset turtle properties
+        self.t.penup()
+        self.t.goto(self.dxpos, self.dypos)
+        self.t.pendown()
+        self.t.color("black")
         
 
 class Pole():
@@ -100,7 +92,7 @@ class Pole():
 
 
 class Hanoi(object):
-    def __init__(self, n=3, start="A", workspace="B", destination="C"):
+    def __init__(self, n=4, start="A", workspace="B", destination="C"):
         self.startp = Pole(start, 0, 0)
         self.workspacep = Pole(workspace, 150, 0)
         self.destinationp = Pole(destination, 300, 0)
@@ -123,7 +115,7 @@ class Hanoi(object):
             self.move_tower(n-1,w,d,s)
 
     def solve(self):
-        self.move_tower(3,self.startp,self.destinationp,self.workspacep)
+        self.move_tower(4,self.startp,self.destinationp,self.workspacep)
 
 
 if __name__ == "__main__":
