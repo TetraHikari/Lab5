@@ -2,6 +2,7 @@ import turtle
 
 class Disk(object):
     def __init__(self, name, xpos, ypos, height, width):
+        self.t = turtle.Turtle()
         self.dname = name
         self.dxpos = xpos
         self.dypos = ypos
@@ -9,24 +10,24 @@ class Disk(object):
         self.dwidth = width
     
     def showdisk(self):
-        turtle.penup()
-        turtle.goto(self.dxpos, self.dypos)
-        turtle.pendown()
-        turtle.fillcolor("blue")  
-        turtle.begin_fill()
+        self.t.penup()
+        self.t.goto(self.dxpos, self.dypos)
+        self.t.pendown()
+        self.t.fillcolor("blue")  
+        self.t.begin_fill()
         
         
-        turtle.forward(self.dwidth/2)
-        turtle.left(90)
-        turtle.forward(self.dheight)
-        turtle.left(90)
-        turtle.forward(self.dwidth)
-        turtle.left(90)
-        turtle.forward(self.dheight)
-        turtle.left(90)
-        turtle.forward(self.dwidth/2)
+        self.t.forward(self.dwidth/2)
+        self.t.left(90)
+        self.t.forward(self.dheight)
+        self.t.left(90)
+        self.t.forward(self.dwidth)
+        self.t.left(90)
+        self.t.forward(self.dheight)
+        self.t.left(90)
+        self.t.forward(self.dwidth/2)
         
-        turtle.end_fill()
+        self.t.end_fill()
     
     def newpos(self, xpos, ypos):
         self.dxpos = xpos
@@ -34,31 +35,32 @@ class Disk(object):
         self.showdisk()
     
     def cleardisk(self):
-        turtle.penup()
-        turtle.goto(self.dxpos, self.dypos)
-        turtle.pendown()
-        turtle.fillcolor("white") 
-        turtle.begin_fill()
-        turtle.color("white")
+        self.t.penup()
+        self.t.goto(self.dxpos, self.dypos)
+        self.t.pendown()
+        self.t.fillcolor("white") 
+        self.t.begin_fill()
+        self.t.color("white")
         
          
-        turtle.forward(self.dwidth/2)
-        turtle.left(90)
-        turtle.forward(self.dheight)
-        turtle.left(90)
-        turtle.forward(self.dwidth)
-        turtle.left(90)
-        turtle.forward(self.dheight)
-        turtle.left(90)
-        turtle.forward(self.dwidth/2)
+        self.t.forward(self.dwidth/2)
+        self.t.left(90)
+        self.t.forward(self.dheight)
+        self.t.left(90)
+        self.t.forward(self.dwidth)
+        self.t.left(90)
+        self.t.forward(self.dheight)
+        self.t.left(90)
+        self.t.forward(self.dwidth/2)
         
-        turtle.end_fill() 
-        turtle.color("black")  
-        turtle.end_fill()
+        self.t.end_fill() 
+        self.t.color("black")  
+        self.t.end_fill()
         
 
 class Pole():
     def __init__(self, name="", xpos=0, ypos=0, thick=10, length=100):
+        self.t = turtle.Turtle()
         self.pname = name
         self.toppos = 0
         self.stack = []
@@ -68,19 +70,19 @@ class Pole():
         self.plength = length
     
     def showpole(self):
-        turtle.penup()
-        turtle.goto(self.pxpos, self.pypos)
-        turtle.pendown()
-        turtle.fillcolor("grey") 
-        turtle.begin_fill()
+        self.t.penup()
+        self.t.goto(self.pxpos, self.pypos)
+        self.t.pendown()
+        self.t.fillcolor("grey") 
+        self.t.begin_fill()
         
         for _ in range(2):
-            turtle.forward(self.pthick)
-            turtle.left(90)
-            turtle.forward(self.plength)
-            turtle.left(90)
+            self.t.forward(self.pthick)
+            self.t.left(90)
+            self.t.forward(self.plength)
+            self.t.left(90)
         
-        turtle.end_fill()
+        self.t.end_fill()
 
     def pushdisk(self, disk):
         disk.newpos(self.pxpos, self.toppos)
