@@ -24,7 +24,6 @@ class Disk(object):
         turtle.end_fill()
     
     def newpos(self, xpos, ypos):
-        self.cleardisk()
         self.dxpos = xpos
         self.dypos = ypos
         self.showdisk()
@@ -35,6 +34,7 @@ class Disk(object):
         turtle.pendown()
         turtle.fillcolor("white") 
         turtle.begin_fill()
+        turtle.color("white")
         
         for _ in range(2):
             turtle.forward(self.dwidth)
@@ -42,6 +42,8 @@ class Disk(object):
             turtle.forward(self.dheight)
             turtle.left(90)
         
+        turtle.end_fill() 
+        turtle.color("black")  
         turtle.end_fill()
         
 
@@ -118,6 +120,5 @@ if __name__ == "__main__":
     disk1.cleardisk()
     turtle.done()  
 
-h = Hanoi()
-h.solve()
+
 
