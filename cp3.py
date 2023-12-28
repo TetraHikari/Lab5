@@ -123,12 +123,18 @@ class Hanoi(object):
 
 
 if __name__ == "__main__":
-    turtle.speed(1)  
+    turtle.speed(100)  
     disk1 = Disk("d1", 0, 0, 20, 40)
+    pole1 = Pole("A", 0, 0)
+    pole1.showpole()
+    pole1.pushdisk(disk1)
+    pole1.popdisk()
     disk1.showdisk()
     disk1.newpos(50, 50)
     disk1.cleardisk()
 
+    h = Hanoi()
+    h.solve()
     
     turtle.done()  
 
