@@ -1,6 +1,3 @@
-
-#create Abstract transportation class which has 3 properties start_place, end_place, distance
-
 from abc import ABC, abstractmethod
 
 class Transportation(ABC):
