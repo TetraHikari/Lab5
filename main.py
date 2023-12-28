@@ -1,3 +1,10 @@
+from operator import is_
+import sys
+from PySide6.QtCore import *
+from PySide6.QtWidgets import *
+from PySide6.QtGui import *
+from PySide6.QtMultimedia import QSoundEffect
+import random
 
 class GameWindow(QWidget):
     def __init__(self):
