@@ -41,6 +41,7 @@ class Dinosaur:
             # Reset the jump speed if not jumping
             self.jump_speed = 15
 
+#Menth: Obstacle class
 class Obstacle:
     def __init__(self):
         self.image = QPixmap("images/spike.png") 
