@@ -15,6 +15,10 @@ class Train(Transportation):
     def calculate_fare(self):
         total_station = self.end_place - self.start_place
         return total_station * 5
+    
+class Taxi(Transportation):
+    def calculate_fare(self):
+        return self.distance * 40
 
 #Pee:Walk class
 class Walk(Transportation):
@@ -27,6 +31,7 @@ if __name__ == "__main__":
     print(t.calculate_fare())
     w = Walk(10, 20)
     print(w.calculate_fare())
+
 
     
     
